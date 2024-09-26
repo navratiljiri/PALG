@@ -1,2 +1,2 @@
 # PALG
-Cvičení z palg
+Cvičení z pokročilé algoritmizace
