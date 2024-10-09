@@ -136,31 +136,7 @@ public class Array {
         System.arraycopy(this.data, 0, bigger, 0, elems);
         data = bigger;
     }
-    //TODO udělat čtvercovou matici kde diagonály budou 0 a ostatní sektory číselné (1,2,3,4)
 
-    public void nut(int size) {
-        int[][] arr = new int[size][size];
-
-        int diagonalEnd = size - 1;
-
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println();
-            for (int j = 0; j < arr.length; j++) {
-                if (i == j || diagonalEnd - i == j) {
-                    arr[i][j] = 0;
-                } else if (i < j && j < diagonalEnd - i) {
-                    arr[i][j] = 1;
-                } else if (i < diagonalEnd - j) {
-                    arr[i][j] = 2;
-                } else if (i < j) {
-                    arr[i][j] = 3;
-                } else {
-                    arr[i][j] = 4;
-                }
-                System.out.print(arr[i][j] + " ");
-            }
-        }
-    }
 
     @Override
     public String toString() {
