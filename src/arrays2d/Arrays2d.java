@@ -111,13 +111,21 @@ public class Arrays2d {
             }
         }
     }
+
+    /**
+     * Bauer řešení
+     * Horní a dolní kvadrant pomocí řádků (dolní se překlopí)
+     * Pravý a levý pomocí sloupců (transpozice) - to velmi snižuje rychlost
+     */
     public void symetricNut2() {
         for (int i = 0; i < column /2; i++) {
-            for(int j = i+1; j < row-1-j;j++) {
+            //System.out.println();
+            for(int j = i+1; j < column-1-i;j++) {
                 data[i][j] = 1;
                 data[j][i] = 4;
-                data[j][row-1-i] = 3;
-                data[row-1-i][j] = 2;
+                data[j][column-1-i] = 3;
+                data[column-1-i][j] = 2;
+                //System.out.print(data[i][j] + " ");
             }
         }
     }

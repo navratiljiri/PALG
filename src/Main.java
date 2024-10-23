@@ -26,29 +26,30 @@ public class Main {
         System.out.print("$Took " + (tac - tic)/1.0E+6 + "ms");
 
     }
+
+    /**
+     * Práce s dvojrozměrným polem - Flipování, přehození řádku x sloupců,
+     */
     public static void createMatrix() {
-        final int size = 10;
+        final int size = 1<< 14;
 
         Arrays2d matrix = new Arrays2d(size);
-        matrix.generateData();
-        //matrix.print();
+        //matrix.generateData();
 
         long tic = System.nanoTime();
         /*for (int i = 0; i < 10000; i++) {
             matrix.swampColumns(0, i%size);
         }*/
-
         //matrix.flipHorizontaly();
-        matrix.symetricNut(1<<10);
+        matrix.symetricNut2();
         long tac = System.nanoTime();
-
         //matrix.print();
-        System.out.println(" ");
         System.out.print("Took " + (tac - tic)/1.0E+6 + "ms");
     }
 
     public static void main(String[] args) {
         //start(100);
-        createMatrix();
+        //createMatrix();
+
     }
 }
