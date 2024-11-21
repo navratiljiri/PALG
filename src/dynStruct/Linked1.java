@@ -57,6 +57,22 @@ public class Linked1 {
             this.elems--;
         }
     }
+    public void append(int value) {
+        Elem1 elem = new Elem1(value);
+        this.indent.setData(value);
+        this.indent.setNext(elem);
+        this.indent = elem;
+        this.elems++;
+    }
+
+    public void clear() {
+        while(this.head != indent) {
+            Elem1 tmp = this.head;
+            this.head = this.head.getNext();
+            //tmp.setNext(null)
+        }
+        this.elems = 0;
+    }
 
     /**
      * Vyhledání prvku
@@ -74,5 +90,34 @@ public class Linked1 {
             }
             return tmp;
         }
+    }
+
+    /**
+     * Není moc přínosný
+     * @param value
+     * @return
+     */
+    public int indexOf(int value) {
+        Elem1 p = this.head;
+        for(int i = 0; i < this.elems; i++) {
+            if(p.getData() == value) {
+                return i;
+            }
+            p = p.getNext();
+        }
+        return -1;
+    }
+
+    /**
+     * Hledání prvku
+     * @param value
+     * @return
+     */
+    public Elem1 find(int value) {
+        Elem1 tmp = this.head;
+        while (tmp!= this.indent && tmp.getData() != value) {
+            tmp = tmp.getNext();
+        }
+        return tmp == indent ? null : tmp;
     }
 }
