@@ -1,8 +1,5 @@
 package dynStruct;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class BinTree {
     private TreeNode root;
     private int elems;
@@ -86,8 +83,9 @@ public class BinTree {
     private TreeNode add(TreeNode r, int value) {
         SearchResult result = find(r,value);
 
-        if (result.node != null)
-            System.out.println("Prvek s hodnotou " + value + "jiz ve strome je.");
+        if (result.node != null) {
+            //System.out.println("Prvek s hodnotou " + value + "jiz ve strome je.");
+        }
         else
         {
             r = new TreeNode(value);
@@ -178,17 +176,17 @@ public class BinTree {
        }
        else {
            index = 0;
-           sizeSubTree(this.root, a);
+           sizeTreeToArray(this.root, a);
     }
     }
 
-    private void sizeSubTree(TreeNode node, int[] a) {
+    private void sizeTreeToArray(TreeNode node, int[] a) {
         if(node != null) {
-            sizeSubTree(node.left,a);
+            sizeTreeToArray(node.left,a);
             for(int i = 0 ; i < node.count ; i++) {
                 a[index++] = node.data;
             }
-            sizeSubTree(node.right,a);
+            sizeTreeToArray(node.right,a);
         }
     }
 

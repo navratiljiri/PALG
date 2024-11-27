@@ -56,20 +56,20 @@ public class Main {
      */
     public static void sort() {
         ArrayBasics bsc = new ArrayBasics();
-        int N = 1 << 28;
+        int N = 1 << 20;
 
         int[] random = generateRandomArray(N);
-        //int[] random2 = generateRandomArray(N);
+        int[] random2 = generateRandomArray(N);
 
         //int[] a = bsc.selectionSort_new(random);
         /*int[] a2 = bsc.selectionSort_new(random2);*/
 
         long tic = System.nanoTime();
-        bsc.quickSort(random);
+        bsc.treeSort(random);
         long tac = System.nanoTime();
 
         long tic2 = System.nanoTime();
-        bsc.mergeSort2(random);
+        bsc.mergeSort(random2);
         long tac2 = System.nanoTime();
 
         /*for (int i = 0; i < a.length; i++) {
@@ -98,7 +98,7 @@ public class Main {
         int[] random = new int[N];
         for (int i = 0; i < N; i++) {
             Random r = new Random();
-            random[i] = r.nextInt(1000);
+            random[i] = r.nextInt(N);
         }
         return random;
     }
