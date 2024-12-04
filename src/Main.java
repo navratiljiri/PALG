@@ -65,7 +65,7 @@ public class Main {
         /*int[] a2 = bsc.selectionSort_new(random2);*/
 
         long tic = System.nanoTime();
-        bsc.treeSort(random);
+        bsc.mergeSort2(random);
         long tac = System.nanoTime();
 
         long tic2 = System.nanoTime();
