@@ -94,7 +94,6 @@ public class Array {
 
         while (end - start > 0) {
             int half = (start + end) / 2;
-
             if (data[half] == value) {
                 return half;
             } else if (data[half] > value) {
